@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Data Augmentation Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Data Augmentation Tool</h1>
+      <p>Upload images to generate zoomed-out versions with padding.</p>
+
+      <form action="{{ url_for('augment') }}" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="padding_min">Padding factor min:</label>
+          <input
+            type="number"
+            step="0.1"
+            name="padding_min"
+            id="padding_min"
+            value="0.5"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="padding_max">Padding factor max:</label>
+          <input
+            type="number"
+            step="0.1"
+            name="padding_max"
+            id="padding_max"
+            value="1.5"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="images">Images (PNG/JPG/JPEG):</label>
+          <input type="file" name="images" id="images" accept="image/*" multiple />
+        </div>
+
+        <button type="submit">Run augmentation</button>
+      </form>
+    </div>
+  </body>
+</html>
