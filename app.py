@@ -36,7 +36,7 @@ HTML_TEMPLATE = """
 </html>
 """
 
-ZOOM_SCALES = [0.3, 0.5, 0.7, 0.9]
+ZOOM_SCALES = [0.5, 0.7, 0.9, 1.1]
 
 @app.route('/')
 def index():
